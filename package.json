@@ -1,0 +1,41 @@
+{
+  "name": "angular-express-session-authentication",
+  "version": "0.0.0",
+  "description": "express server with authentication for single page web app",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "connect-mongo": "latest",
+    "consolidate": "^0.10.0",
+    "express": "~3.4.8",
+    "mongoose": "latest",
+    "passport": "~0.2.0",
+    "passport-facebook": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "jshint": "~2.4.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/raga2560/angular-express-session-nodejs.git",
+    "originalurl": "https://github.com/jryu01/expAuth-session.git"
+  },
+  "keywords": [
+    "authentication",
+    "passport.js",
+    "rest",
+    "node.js",
+    "single page web application",
+    "angular.js",
+    "boilerplate"
+  ],
+  "author": "Jaehwan Ryu",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
