@@ -15,6 +15,14 @@ var facebookCallback = passport.authenticate('facebook', {
   failureRedirect : '/'
 });
 
+// authentication controller functions 
+var googleAuth = passport.authenticate('google', { scope : 'email' });
+var googleCallback = passport.authenticate('google', { 
+  successRedirect : '/',
+  failureRedirect : '/'
+});
+
+
 function signin(req, res, next) {
   passport.authenticate('local', function (err, user, info) {
     if (err) { return next(err); }
@@ -94,7 +102,7 @@ function checkSignin(req, res) {
 }
 
 function facebookAuth() {
-  return  passport.authenticate('facebook', { scope : 'email' });
+  return  passport.authenticate('facebook', { scope : ['profile', 'email'] });
 }
 
 function facebookCallback() {
@@ -104,6 +112,19 @@ function facebookCallback() {
     });
 }
 
+function googleAuth() {
+  return  passport.authenticate('google', { scope : ['profile', 'email'] });
+}
+
+function googleCallback() {
+  return passport.authenticate('google', {
+      successRedirect : '/',
+      failureRedirect : '/'
+    });
+}
+
+
+
 // public functions and variables 
 exports.signin = signin;
 exports.signup = signup;
@@ -111,3 +132,5 @@ exports.signout = signout;
 exports.checkSignin = checkSignin;
 exports.facebookAuth = facebookAuth;
 exports.facebookCallback = facebookCallback;
+exports.googleAuth = googleAuth;
+exports.googleCallback = googleCallback;

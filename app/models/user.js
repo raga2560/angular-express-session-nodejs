@@ -26,6 +26,12 @@ var UserSchema = new Schema({
     name: String,
     email: String,
     acessToken: String,
+  } ,
+   google: {
+    id: String,
+    name: String,
+    email: String,
+    acessToken: String,
   } 
 }); 
 
@@ -43,6 +49,10 @@ UserSchema.options.toJSON = {
       delete ret.facebook.accessToken;
     }
 
+	if (ret.google && ret.google.accessToken) {
+      delete ret.google.accessToken;
+    }
+	
     // add id feild and remove _id and __v
     ret.id = ret._id;
 

@@ -6,7 +6,11 @@ angular.module('angularSessionAuthApp')
     var username;
     if ($scope.user.facebook) {
       username = $scope.user.facebook.name;
-    } else if ($scope.user.local) {
+    } 
+	else if ($scope.user.google) {
+      username = $scope.user.google.name;
+    }
+	else if ($scope.user.local) {
       username = $scope.user.local.email;
     }
     $scope.greeting = 'Hello ' + username + '!';  

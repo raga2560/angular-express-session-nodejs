@@ -27,6 +27,10 @@ module.exports = function (app) {
   // routes for facebook authentication
   app.get('/auth/facebook', authCtrl.facebookAuth);
   app.get('/auth/facebook/callback', authCtrl.facebookCallback);
+  
+  // routes for google authentication
+  app.get('/auth/google', authCtrl.googleAuth);
+  app.get('/auth/google/callback', authCtrl.googleCallback);
 
   // serve index.html for all other route
   app.all('/*', function (req, res) { res.render('index'); }); 
